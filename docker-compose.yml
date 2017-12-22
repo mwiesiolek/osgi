@@ -1,4 +1,4 @@
 nexus:
-  image: sonatype/nexus3
+  image: sonatype/nexus:oss
   ports:
     - "8081:8081"
