@@ -2,3 +2,9 @@ nexus:
   image: sonatype/nexus3
   ports:
     - "8081:8081"
+
+rabbitmq:
+  image: rabbitmq:management
+  ports:
+    - "5672:80"
+    - "15672:15672"
