@@ -36,15 +36,14 @@ public class MainActivator implements BundleActivator {
                 ServiceReference<RepositoryAdmin> repositoryAdminServiceReference = ctx.getServiceReference(RepositoryAdmin.class);
                 RepositoryAdmin repositoryAdmin = ctx.getService(repositoryAdminServiceReference);
 
-                repositoryAdmin.addRepository("http://localhost:8181/cave/http/my-repo-repository.xml");
-                Resource[] resources = repositoryAdmin.discoverResources("(&(symbolicname=osgi)(version=2.0.0-SNAPSHOT))");
+                repositoryAdmin.addRepository("http://localhost:8181/cave/http/my-repo-2-repository.xml");
+                Resource[] resources = repositoryAdmin.discoverResources("(&(symbolicname=osgi)(version=3.0.0-SNAPSHOT))");
                 log.info("Resource found: {}", resources.length);
 
                 Resolver resolver = repositoryAdmin.resolver();
                 resolver.add(resources[0]);
 
                 if(resolver.resolve()){
-                    // 16 = start bundle
                     resolver.deploy(Resolver.START);
                 }
             }catch(Exception e) {

@@ -62,7 +62,6 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>pl.mw.test.osgi</Export-Package>
-                        <Import-Package>org.osgi.service.repository; version="[1.0,2.0)",org.apache.felix.bundlerepository;version="[2.0,3)"</Import-Package>
                         <Private-Package>pl.mw.test.*</Private-Package>
                         <Bundle-Activator>pl.mw.test.osgi.MainActivator</Bundle-Activator>
                     </instructions>
